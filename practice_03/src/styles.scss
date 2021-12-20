@@ -1,0 +1,89 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar {
+  background: white;
+
+  &__mouth-week,
+  &__weeks {
+    background: darkorchid;
+  }
+
+  &__mouth-week {
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 24px;
+  }
+
+  &__weeks {
+    color: white;
+
+    span {
+      font-size: 17px;
+      padding: 7px;
+    }
+  }
+
+  &__days {
+    display: flex;
+
+    label {
+      padding: 7px;
+      width: 31px;
+      text-align: center;
+    }
+    input {
+      display: contents;
+    }
+
+    &-work {
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background: rgb(44, 232, 98);
+      }
+      &:focus {
+        color: white;
+        background: rgb(48, 128, 13);
+      }
+    }
+
+    &-holiday {
+      background: rgb(176, 34, 79);
+      cursor: pointer;
+
+      &:hover,
+      &:focus,
+      &:focus-visible {
+        color: white;
+        background: red;
+      }
+    }
+
+    &-weekend {
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+        background: #d70353;
+      }
+      &:focus {
+        color: white;
+        background: #720011;
+      }
+    }
+
+    &-previous,
+    &-next {
+      background: white;
+      color: rgb(169, 169, 169);
+      cursor: not-allowed;
+    }
+  }
+}

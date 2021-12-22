@@ -16,28 +16,27 @@ function isSum(arr, val) {
 // 2) Напишите функцию, которая преобразует глубокий массив в одномерный.Не используйте array.flat()
 function flatten(array) {
     let arr1 = [];
-    (function flat(array) {
-        array.forEach(function(el) {
-            if (Array.isArray(el)) flat(el);
-            else arr1.push(el);
-        });
-    })(array);
+    for (let i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+            arr1 = arr1.concat(flatten(array[i]));
+        } else arr1.push(array[i]);
+    }
     return arr1;
 }
 
 // console.log(flatten([1, 2, [3, 4, [5]]]))
 
 // 3) Напишите функцию, которая разделяет массив на части заданного размера.
-function chunk(array, size) {
-    let chunkedArr = [];
+function arrSplit(array, size) {
+    let arr = [];
     let index = 0;
     while (index < array.length) {
-        chunkedArr.push(array.slice(index, size + index));
+        arr.push(array.slice(index, size + index));
         index = index + size;
     }
-    return chunkedArr;
+    return arr;
 }
-// console.log(chunk([ 1, 2, 3, 4, 5 ], 2))
+// console.log(arrSplit([ 1, 2, 3, 4, 5 ], 2))
 
 // 4) Напишите функцию, которая поверхностно сравнивает два объекта.
 function isEqual(firstObj, secondObj) {

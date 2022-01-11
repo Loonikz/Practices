@@ -28,10 +28,10 @@ describe('Tests for class Validator isDate', () => {
     })
 })
 describe('Tests for class Validator isPhone', () => {
-    test('Test for method isDate true', () => {
-        expect(Validator.isPhone('+38(029)817-68-92')).toBe(true)
+    test('Test for method isPhone true', () => {
+        expect(Validator.isPhone('+380(29)817-68-92')).toBe(true)
     })
-    test('Test for method isDate false',() => {
-        expect(Validator.isPhone('+380292176892')).toBe(false)
+    test('Test for method isPhone false',() => {
+        expect(Validator.isPhone('+0298176892')).toBe(false)
     })
 })

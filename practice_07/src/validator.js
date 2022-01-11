@@ -7,13 +7,11 @@
 class Validator {
 
     isEmail(email){
-        const reg = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/
-        return reg.test(String(email).toLowerCase());
+        return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(String(email).toLowerCase());
     }
 
     isDomain(domain){
-        const reg = /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$/
-        return reg.test(String(domain));
+        return /^((https?|ftp)\:\/\/)?([a-z0-9]{1})((\.[a-z0-9-])|([a-z0-9-]))*\.([a-z]{2,6})(\/?)$/.test(String(domain));
     }
 
     isDate(date){
@@ -29,8 +27,7 @@ class Validator {
     }
 
     isPhone(phone){
-        const reg = /^\+\d{2}\(\d{3}\)\d{3}-\d{2}-\d{2}$/
-        return reg.test(String(phone));
+        return /^\+\d{3}\(\d{2}\)\d{3}-\d{2}-\d{2}$/.test(String(phone));
     }
 }
 
